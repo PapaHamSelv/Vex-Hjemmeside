@@ -1,0 +1,601 @@
+/* General Reset */
+* {
+    font-family: 'Poppins', Arial, sans-serif; /* Anvender Poppins-skrifttypen */
+}
+
+body {
+    margin: 0;
+    font-family: 'Poppins', Arial, sans-serif;
+    transition: background-color 0.3s, color 0.3s;
+    
+}
+
+/* Dark Mode (default) */
+body.dark-mode {
+    background-color: #1A1A1A; /* Mørk baggrund */
+    color: #e4e4e4; /* Lys tekst */
+}
+
+/* Light Mode */
+body.light-mode {
+    background-color: #f9f9f9; /* Lys baggrund */
+    color: #333333; /* Mørk tekst */
+}
+
+/* Navbar Styling */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 1rem;
+    background-color: #2C2C2C;
+    color: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+/* Desktop Menu */
+.desktop-menu {
+    display: flex;
+    gap: 1rem;
+}
+
+.desktop-menu a {
+    text-decoration: none;
+    color: white;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+}
+
+.desktop-menu a:hover {
+    color: #f2d472;
+}
+
+/* Mobile Menu */
+.mobile-menu {
+    display: none; /* Skjules som standard */
+    flex-direction: column;
+    gap: 0.5rem;
+    background-color: #2C2C2C;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%; /* Sørger for, at menuen fylder hele bredden */
+    padding: 1rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 10;
+}
+
+.mobile-menu a {
+    text-decoration: none;
+    color: white;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+}
+
+.mobile-menu a:hover {
+    color: #f2d472;
+}
+
+/* Toggle Icon */
+.toggle-icon {
+    cursor: pointer;
+    font-size: 1.5rem; /* Størrelse på emojien */
+    color: white; /* Farve i dark mode */
+    margin-left: 1rem; /* Afstand fra links */
+    transition: color 0.3s ease; /* Glidende overgang for farve */
+    display: inline-block; /* Sørger for, at den opfører sig som en knap */
+}
+
+/* Light Mode Styling */
+body.light-mode .toggle-icon {
+    color: #333333; /* Farve i light mode */
+}
+
+/* Responsiv styling */
+@media (max-width: 768px) {
+    .desktop-menu {
+        display: none; /* Skjul desktop-menu på små skærme */
+    }
+
+    .toggle-icon {
+        display: block; /* Vis toggle-ikonet på små skærme */
+    }
+
+    .mobile-menu {
+        display: none; /* Skjules som standard */
+    }
+
+    .mobile-menu.active {
+        display: flex; /* Vis menuen, når den er aktiv */
+    }
+
+    .announcement-container {
+        flex-direction: column; /* Stabler boksene lodret */
+        align-items: center; /* Centrerer boksene */
+    }
+
+    .announcement-box {
+        width: 90%; /* Gør boksene bredere på små skærme */
+        margin: 1rem 0; /* Tilføjer mellemrum mellem boksene */
+    }
+
+    .mobile-menu {
+        width: 100%; /* Sørger for, at menuen fylder hele bredden */
+    }
+}
+
+/* Navbar i Light Mode */
+body.light-mode .navbar {
+    background-color: #ffffff; /* Hvid baggrund */
+    color: #333333; /* Mørk tekstfarve */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Let skygge */
+}
+
+body.light-mode .navbar a {
+    color: #333333; /* Mørk tekstfarve */
+}
+
+body.light-mode .navbar a:hover {
+    color: #1d8738; /* Grøn hover-effekt */
+}
+
+/* Box around navbar content */
+.navbar-content {
+    display: flex;
+    align-items: center;
+    background-color: #3b3b3b; /* Mørk baggrund til boksen */
+    padding: 0.6rem 1.5rem; /* Øget padding for at gøre boksen højere */
+    border-radius: 10px; /* Afrundede hjørner */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Let skygge */
+}
+
+/* Navbar-boksen i Light Mode */
+body.light-mode .navbar-content {
+    background-color: #f9f9f9; /* Lys baggrund */
+    color: #333333; /* Mørk tekstfarve */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Let skygge */
+    border-radius: 10px; /* Afrundede hjørner */
+}
+
+body.light-mode .navbar-content a {
+    color: #333333; /* Mørk tekstfarve til links */
+}
+
+body.light-mode .navbar-content a:hover {
+    color: #1d8738; /* Grøn hover-effekt */
+}
+
+.navbar .logo {
+    margin-right: auto;
+    margin-top: 1px
+}
+
+.navbar .logo img {
+    height: 30px; /* Reducer logoets størrelse for at matche den mindre navbar */
+}
+
+.navbar a {
+    text-decoration: none;
+    color: white;
+    margin: 0 1rem;
+    transition: color 0.3s;
+}
+
+.navbar a:hover {
+    color: #f2d472;
+}
+
+/* Dark/Light Mode Toggle Icon */
+.toggle-icon {
+    cursor: pointer;
+    font-size: 1.5rem;
+    line-height: 1;
+}
+
+/* Section Title with Gradient */
+.section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    margin: 2rem 0 1rem;
+    background: linear-gradient(90deg, #f2d472, #1d8738); /* Gradient fra guld til grøn */
+    -webkit-background-clip: text; /* Klipper baggrunden til tekst */
+    -webkit-text-fill-color: transparent; /* Gør teksten gennemsigtig, så gradienten vises */
+    text-transform: uppercase; 
+    font-family: 'Poppins', Arial, sans-serif;
+    font-weight: 600; /* Gør titlen fed */
+}
+
+/* Sektionstitel i Light Mode */
+body.light-mode .section-title {
+    background: linear-gradient(90deg, #1d8738, #f2d472); /* Grøn til guld gradient */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Typewriter Effekt */
+.typewriter {
+    text-align: center; /* Sørger for, at teksten altid er centreret */
+    font-size: 1.5rem;
+    color: #e4e4e4;
+    margin: 0 auto 2rem; /* Centrerer elementet horisontalt */
+    height: 2rem; /* Sørger for, at teksten ikke hopper */
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: 2px solid #f2d472; /* Blinkende cursor */
+    display: block; /* Sørger for, at elementet fylder hele linjen */
+    width: fit-content; /* Tilpasser bredden til indholdet */
+    animation: blink 0.5s step-end infinite; /* Kun blinkende cursor */
+}
+
+/* Typewriter i Light Mode */
+body.light-mode .typewriter {
+    color: #333333; /* Mørk tekstfarve */
+    border-right: 2px solid #1d8738; /* Grøn cursor */
+}
+
+/* Fjern typing-animation */
+@keyframes blink {
+    50% {
+        border-color: transparent;
+    }
+}
+
+/* Container for Announcement Boxes */
+.announcement-container {
+    display: flex;
+    flex-wrap: wrap; /* Tillader boksene at bryde til næste linje */
+    gap: 1rem; /* Tilføjer mellemrum mellem boksene */
+    justify-content: flex-start; /* Sørger for, at boksene starter fra venstre */
+    margin-top: 1rem;
+}
+
+/* Første boks */
+.announcement-container .box-1 {
+    background-color: #2C2C2C;
+    color: white;
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 400px; /* Fast bredde */
+    height: 590px; /* Specifik højde */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    margin-left: 1rem;
+    gap: 0.5rem;
+}
+
+/* Anden boks */
+.announcement-container .box-2 {
+    background-color: #2C2C2C;
+    color: white;
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 500px; /* Gør boks 2 bredere */
+    height: 250px; /* Gør boks 2 kortere */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 0.5rem;
+}
+
+/* Justering af teksten i boks 2 */
+.announcement-container .box-2 .announcement-text {
+    margin-bottom: 1rem; /* Tilføjer mellemrum under hvert tekstafsnit */
+    line-height: 1.6; /* Øger linjehøjden for bedre læsbarhed */
+}
+
+/* Tredje boks */
+.announcement-container .box-3 {
+    background-color: #2C2C2C;
+    color: white;
+    padding: 1.5rem;
+    border-radius: 10px; /* Afrundede hjørner */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Let skygge */
+    width: 500px; /* Samme bredde som boks 2 */
+    height: 274px; /* Dynamisk højde baseret på indhold */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 0.5rem;
+    margin-top: 315px; /* Tilføjer afstand fra boks 2 */
+    margin-left: -563px; /* Flytter boksen mere til venstre */
+}
+
+.announcement-container .box-4 {
+    background-color: #2C2C2C;
+    color: white;
+    padding: 1.5rem;
+    border-radius: 10px; /* Afrundede hjørner */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Let skygge */
+    width: 350px; /* Samme bredde som boks 2 */
+    height: 590px; /* Reduceret højde med 2px */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 0.5rem;
+    margin-top: -671px; /* Tilføjer afstand fra boks 2 */
+    margin-left: 65.2rem; /* Flytter boksen mere til venstre */
+}
+
+.announcement-container .box-5 {
+    background-color: #2C2C2C;
+    color: white;
+    padding: 1.5rem;
+    border-radius: 10px; /* Afrundede hjørner */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Let skygge */
+    width: 400px; /* Samme bredde som boks 2 */
+    height: 591px; /* Dynamisk højde baseret på indhold */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 0.5rem;
+    margin-top: -656px; /* Tilføjer afstand fra boks 2 */
+    margin-left: 91rem; /* Flytter boksen mere til venstre */
+}
+
+/* Ny anmeldelsesboks */
+.announcement-container .box-4 {
+    background-color: #2C2C2C; /* Mørk grå baggrund */
+    color: white;
+    padding: 1.5rem;
+    border-radius: 10px; /* Afrundede hjørner */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Let skygge */
+    width: 350px; /* Fast bredde */
+    height: 590px; /* Dynamisk højde baseret på indhold */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 1rem; /* Mellemrum mellem anmeldelsesboksene */
+    margin-top: -670px; /* Juster afstand fra boks 4 */
+    margin-left: 65.2rem; /* Juster placering */
+}
+
+/* Justering af knappen */
+.announcement-button {
+    display: inline-block;
+    margin-top: auto; /* Sørger for, at knappen placeres i bunden */
+    padding: 0.5rem 1rem;
+    background: linear-gradient(90deg, #f2d472, #1d8738); /* Gradient baggrund */
+    color: white;
+    text-decoration: none;
+    border-radius: 5px; /* Afrundede hjørner */
+    font-size: 0.9rem;
+    font-weight: bold;
+    text-align: center;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+/* Announcement Box */
+.announcement-box {
+    background-color: #2C2C2C; /* Mørk grå baggrund */
+    color: white;
+    padding: 1.5rem;
+    border-radius: 10px; /* Afrundede hjørner */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Let skygge */
+    width: 400px; /* Fast bredde på boksen */
+    height: auto; /* Dynamisk højde baseret på indhold */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* Sørger for, at indholdet starter fra toppen */
+    gap: 0.5rem; /* Reducerer mellemrum mellem elementerne */
+}
+
+/* Bokse i Light Mode */
+body.light-mode .announcement-box {
+    background-color: #ffffff; /* Hvid baggrund */
+    color: #333333; /* Mørk tekstfarve */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Let skygge */
+}
+
+body.light-mode .announcement-title {
+    color: #1d8738; /* Grøn titel */
+}
+
+body.light-mode .announcement-text {
+    color: #555555; /* Mørk grå tekst */
+}
+
+/* Hover-effekt for boksene */
+.announcement-box:hover {
+    transform: scale(1.05); /* Gør boksen lidt større */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3); /* Tilføjer en subtil skygge i baggrunden */
+    transition: transform 0.7s ease, box-shadow 0.3s ease; /* Glidende overgang */
+}
+
+/* Announcement Title */
+.announcement-title {
+    font-size: 1.3rem; /* Reducerer titlens størrelse */
+    margin: 0 0 0.2rem; /* Mindre bund-margin */
+    color: #f2d472; /* Guld farve til titlen */
+    text-align: center; /* Sørger for, at teksten er centreret */
+    font-family: 'Poppins', Arial, sans-serif;
+    font-weight: 600; /* Gør titlen fed */
+}
+
+/* Announcement Text */
+.announcement-text {
+    font-size: 0.9rem; /* Reducerer tekstens størrelse */
+    color: #e4e4e4; /* Lys grå tekst */
+    margin: 0 0 0.2rem; /* Mindre bund-margin */
+    line-height: 1.4; /* Justerer linjehøjden for bedre læsbarhed */
+    margin-top: -1px; /* Løfter teksten 1px op */
+}
+
+/* Announcement Image */
+.announcement-image {
+    width: 95%; /* Gør billedet lidt mindre end boksens bredde */
+    height: auto; /* Bevarer billedets proportioner */
+    margin: 0.5rem auto; /* Centrerer billedet og reducerer afstand */
+    border-radius: 5px; /* Giver billedet afrundede hjørner */
+    object-fit: cover; /* Sørger for, at billedet passer inden for boksen */
+}
+
+/* Justering af knappen */
+.announcement-button {
+    display: inline-block;
+    margin-top: auto; /* Sørger for, at knappen placeres i bunden */
+    padding: 0.5rem 1rem;
+    background: linear-gradient(90deg, #f2d472, #1d8738); /* Gradient baggrund */
+    color: white;
+    text-decoration: none;
+    border-radius: 5px; /* Afrundede hjørner */
+    font-size: 0.9rem;
+    font-weight: bold;
+    text-align: center;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+/* Hover-effekt for knappen */
+.announcement-button:hover {
+    transform: translateY(-3px); /* Løfter knappen lidt op */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Let skygge */
+}
+
+/* Knapper i Light Mode */
+body.light-mode .announcement-button {
+    background: linear-gradient(90deg, #1d8738, #f2d472); /* Grøn til guld gradient */
+    color: white; /* Hvid tekst */
+}
+
+body.light-mode .announcement-button:hover {
+    background: linear-gradient(90deg, #145a26, #d4b057); /* Mørkere grøn til guld ved hover */
+}
+
+/* Team Container */
+.team-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* To kolonner */
+    gap: 1rem; /* Mellemrum mellem boksene */
+    margin: 2rem auto;
+    max-width: 1200px;
+    padding: 0 1rem;
+    font-family: 'Poppins', Arial, sans-serif; /* Anvender Poppins-skrifttypen */
+}
+
+/* Team Box med gradient streg */
+.team-box {
+    display: flex;
+    align-items: flex-start; /* Justerer indholdet til toppen */
+    background-color: #2C2C2C; /* Mørk grå baggrund */
+    color: white;
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    gap: 1rem; /* Mellemrum mellem billede og tekst */
+    min-height: 200px; /* Ens højde for alle bokse */
+    position: relative; /* Gør det muligt at placere pseudo-elementet */
+}
+
+/* Gradient streg i venstre side */
+.team-box::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 5px; /* Bredden af stregen */
+    height: 100%; /* Strækker sig over hele boksens højde */
+    background-color: #1d8738; /* Grøn til gul gradient */
+    border-radius: 10px 0 0 10px; /* Afrundede hjørner på venstre side */
+}
+
+/* Hover-effekt for Team Box */
+.team-box:hover {
+    transform: scale(1.05); /* Gør boksen lidt større */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3); /* Tilføjer en subtil skygge */
+    transition: 0.7s ease; /* Glidende overgang */
+}
+
+.team-box:hover::before {
+    background-color: #d4b057;
+}
+
+/* Profilbillede */
+.team-image {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%; /* Gør billedet rundt */
+    object-fit: cover; /* Sørger for, at billedet passer inden for rammen */
+    flex-shrink: 0; /* Forhindrer billedet i at ændre størrelse */
+}
+
+/* Team Info */
+.team-info {
+    display: flex;
+    flex-direction: column; /* Sørger for, at teksten stables lodret */
+    justify-content: flex-start; /* Justerer teksten til toppen */
+    flex: 1; /* Sørger for, at teksten fylder resten af boksen */
+}
+
+/* Team Name */
+.team-name {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: #f2d472;
+}
+
+/* Team Role */
+.team-role {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    color: #1d8738;
+}
+
+/* Team Description */
+.team-description {
+    font-size: 0.9rem;
+    color: #e4e4e4;
+    line-height: 1.5; /* Forbedrer læsbarheden */
+}
+
+/* Light Mode Styling */
+body.light-mode .team-box {
+    background-color: #ffffff;
+    color: #333333;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+body.light-mode .team-name {
+    color: #1d8738;
+}
+
+body.light-mode .team-role {
+    color: #f2d472;
+}
+
+body.light-mode .team-description {
+    color: #555555;
+}
+
+/* Indlejret anmeldelsesboks */
+.review-box {
+    background-color: #2C2C2C; /* Mørk grå baggrund */
+    color: white; /* Lys tekst */
+    padding: 1rem;
+    border-radius: 5px; /* Afrundede hjørner */
+    margin-bottom: 1rem; /* Afstand mellem bokse */
+    border-left: 5px solid #f2d472; /* Gul streg i venstre side */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Let skygge */
+}
+
+/* Light mode styling for review-box */
+body.light-mode .review-box {
+    background-color: #ffffff; /* Hvid baggrund */
+    color: #333333; /* Mørk tekst */
+    border-left: 5px solid #1d8738; /* Grøn streg i venstre side */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Let skygge */
+}
+
+/* Tekst i review-box */
+.review-text {
+    font-size: 0.9rem;
+    line-height: 1.5; /* Forbedrer læsbarheden */
+}
+
+/* Light mode styling for tekst */
+body.light-mode .review-text {
+    color: #555555; /* Mørkere tekstfarve i light mode */
+}
