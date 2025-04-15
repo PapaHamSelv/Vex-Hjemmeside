@@ -1,0 +1,274 @@
+/* General Reset */
+body {
+    margin: 0;
+    font-family: 'Poppins', Arial, sans-serif;
+    transition: background-color 0.3s, color 0.3s;
+    
+}
+
+/* Dark Mode (default) */
+body.dark-mode {
+    background-color: #1A1A1A; /* Mørkeblå/grå nuance */
+    color: #e4e4e4;
+}
+
+/* Light Mode */
+body.light-mode {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+/* Navbar Styling med gradient */
+.navbar {
+    display: flex;
+    justify-content: space-between; /* Sørger for, at logo og links er på hver sin side */
+    align-items: center;
+    padding: 0.3rem 1.5rem; /* Mindre padding for en mere kompakt navbar */
+    background-color: #2C2C2C;
+    color: white;
+    height: 50px; /* Reduceret højde */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Let skygge */
+}
+
+/* Box around navbar content */
+.navbar-content {
+    display: flex;
+    align-items: center;
+    background-color: #3b3b3b; /* Mørk baggrund til boksen */
+    padding: 0.6rem 1.5rem; /* Øget padding for at gøre boksen højere */
+    border-radius: 10px; /* Afrundede hjørner */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Let skygge */
+}
+
+.navbar .logo {
+    margin-right: auto;
+    margin-top: 1px
+}
+
+.navbar .logo img {
+    height: 30px; /* Reducer logoets størrelse for at matche den mindre navbar */
+}
+
+.navbar a {
+    text-decoration: none;
+    color: white;
+    margin: 0 1rem;
+    transition: color 0.3s;
+}
+
+.navbar a:hover {
+    color: #f2d472;
+}
+
+/* Dark/Light Mode Toggle Icon */
+.toggle-icon {
+    cursor: pointer;
+    font-size: 1.5rem;
+    line-height: 1;
+}
+
+/* Section Title with Gradient */
+.section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    margin: 2rem 0 1rem;
+    background: linear-gradient(90deg, #f2d472, #1d8738); /* Gradient fra guld til grøn */
+    -webkit-background-clip: text; /* Klipper baggrunden til tekst */
+    -webkit-text-fill-color: transparent; /* Gør teksten gennemsigtig, så gradienten vises */
+    text-transform: uppercase; 
+    font-family: 'Poppins', Arial, sans-serif;
+    font-weight: 600; /* Gør titlen fed */
+}
+
+/* Typewriter Effekt */
+.typewriter {
+    text-align: center; /* Sørger for, at teksten altid er centreret */
+    font-size: 1.5rem;
+    color: #e4e4e4;
+    margin: 0 auto 2rem; /* Centrerer elementet horisontalt */
+    height: 2rem; /* Sørger for, at teksten ikke hopper */
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: 2px solid #f2d472; /* Blinkende cursor */
+    display: block; /* Sørger for, at elementet fylder hele linjen */
+    width: fit-content; /* Tilpasser bredden til indholdet */
+    animation: blink 0.5s step-end infinite; /* Kun blinkende cursor */
+}
+
+/* Fjern typing-animation */
+@keyframes blink {
+    50% {
+        border-color: transparent;
+    }
+}
+
+/* Container for Announcement Boxes */
+.announcement-container {
+    display: flex;
+    flex-wrap: wrap; /* Tillader boksene at bryde til næste linje */
+    gap: 1rem; /* Tilføjer mellemrum mellem boksene */
+    justify-content: flex-start; /* Sørger for, at boksene starter fra venstre */
+    margin-top: 1rem;
+}
+
+/* Første boks */
+.announcement-container .box-1 {
+    background-color: #2C2C2C;
+    color: white;
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 400px; /* Fast bredde */
+    height: 590px; /* Specifik højde */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    margin-left: 1rem;
+    gap: 0.5rem;
+}
+
+/* Anden boks */
+.announcement-container .box-2 {
+    background-color: #2C2C2C;
+    color: white;
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 500px; /* Gør boks 2 bredere */
+    height: 250px; /* Gør boks 2 kortere */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 0.5rem;
+}
+
+/* Justering af teksten i boks 2 */
+.announcement-container .box-2 .announcement-text {
+    margin-bottom: 1rem; /* Tilføjer mellemrum under hvert tekstafsnit */
+    line-height: 1.6; /* Øger linjehøjden for bedre læsbarhed */
+}
+
+/* Tredje boks */
+.announcement-container .box-3 {
+    background-color: #2C2C2C;
+    color: white;
+    padding: 1.5rem;
+    border-radius: 10px; /* Afrundede hjørner */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Let skygge */
+    width: 500px; /* Samme bredde som boks 2 */
+    height: 274px; /* Dynamisk højde baseret på indhold */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 0.5rem;
+    margin-top: 315px; /* Tilføjer afstand fra boks 2 */
+    margin-left: -563px; /* Flytter boksen mere til venstre */
+}
+
+.announcement-container .box-4 {
+    background-color: #2C2C2C;
+    color: white;
+    padding: 1.5rem;
+    border-radius: 10px; /* Afrundede hjørner */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Let skygge */
+    width: 350px; /* Samme bredde som boks 2 */
+    height: 590px; /* Reduceret højde med 2px */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 0.5rem;
+    margin-top: -671px; /* Tilføjer afstand fra boks 2 */
+    margin-left: 65.2rem; /* Flytter boksen mere til venstre */
+}
+
+.announcement-container .box-5 {
+    background-color: #2C2C2C;
+    color: white;
+    padding: 1.5rem;
+    border-radius: 10px; /* Afrundede hjørner */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Let skygge */
+    width: 400px; /* Samme bredde som boks 2 */
+    height: 591px; /* Dynamisk højde baseret på indhold */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 0.5rem;
+    margin-top: -656px; /* Tilføjer afstand fra boks 2 */
+    margin-left: 91rem; /* Flytter boksen mere til venstre */
+}
+
+/* Justering af knappen i boks 3 */
+.announcement-container .box-3 .announcement-button {
+    /* Denne regel er ikke længere nødvendig, da knappen er fjernet */
+}
+
+/* Announcement Box */
+.announcement-box {
+    background-color: #2C2C2C; /* Mørk grå baggrund */
+    color: white;
+    padding: 1.5rem;
+    border-radius: 10px; /* Afrundede hjørner */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Let skygge */
+    width: 400px; /* Fast bredde på boksen */
+    height: auto; /* Dynamisk højde baseret på indhold */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* Sørger for, at indholdet starter fra toppen */
+    gap: 0.5rem; /* Reducerer mellemrum mellem elementerne */
+}
+
+/* Hover-effekt for boksene */
+.announcement-box:hover {
+    transform: scale(1.05); /* Gør boksen lidt større */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3); /* Tilføjer en subtil skygge i baggrunden */
+    transition: transform 0.7s ease, box-shadow 0.3s ease; /* Glidende overgang */
+}
+
+/* Announcement Title */
+.announcement-title {
+    font-size: 1.3rem; /* Reducerer titlens størrelse */
+    margin: 0 0 0.2rem; /* Mindre bund-margin */
+    color: #f2d472; /* Guld farve til titlen */
+    text-align: center; /* Sørger for, at teksten er centreret */
+    font-family: 'Poppins', Arial, sans-serif;
+    font-weight: 600; /* Gør titlen fed */
+}
+
+/* Announcement Text */
+.announcement-text {
+    font-size: 0.9rem; /* Reducerer tekstens størrelse */
+    color: #e4e4e4; /* Lys grå tekst */
+    margin: 0 0 0.2rem; /* Mindre bund-margin */
+    line-height: 1.4; /* Justerer linjehøjden for bedre læsbarhed */
+    margin-top: -1px; /* Løfter teksten 1px op */
+}
+
+/* Announcement Image */
+.announcement-image {
+    width: 95%; /* Gør billedet lidt mindre end boksens bredde */
+    height: auto; /* Bevarer billedets proportioner */
+    margin: 0.5rem auto; /* Centrerer billedet og reducerer afstand */
+    border-radius: 5px; /* Giver billedet afrundede hjørner */
+    object-fit: cover; /* Sørger for, at billedet passer inden for boksen */
+}
+
+/* Justering af knappen */
+.announcement-button {
+    display: inline-block;
+    margin-top: auto; /* Sørger for, at knappen placeres i bunden */
+    padding: 0.5rem 1rem;
+    background: linear-gradient(90deg, #f2d472, #1d8738); /* Gradient baggrund */
+    color: white;
+    text-decoration: none;
+    border-radius: 5px; /* Afrundede hjørner */
+    font-size: 0.9rem;
+    font-weight: bold;
+    text-align: center;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+/* Hover-effekt for knappen */
+.announcement-button:hover {
+    transform: translateY(-3px); /* Løfter knappen lidt op */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Let skygge */
+}
