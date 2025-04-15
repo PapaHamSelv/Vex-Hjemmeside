@@ -14,8 +14,8 @@ body.dark-mode {
 
 /* Light Mode */
 body.light-mode {
-    background-color: #ffffff;
-    color: #000000;
+    background-color: #f9f9f9; /* Lys baggrund */
+    color: #333333; /* Mørk tekstfarve */
 }
 
 /* Navbar Styling med gradient */
@@ -30,6 +30,21 @@ body.light-mode {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Let skygge */
 }
 
+/* Navbar i Light Mode */
+body.light-mode .navbar {
+    background-color: #ffffff; /* Hvid baggrund */
+    color: #333333; /* Mørk tekstfarve */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Let skygge */
+}
+
+body.light-mode .navbar a {
+    color: #333333; /* Mørk tekstfarve */
+}
+
+body.light-mode .navbar a:hover {
+    color: #1d8738; /* Grøn hover-effekt */
+}
+
 /* Box around navbar content */
 .navbar-content {
     display: flex;
@@ -38,6 +53,22 @@ body.light-mode {
     padding: 0.6rem 1.5rem; /* Øget padding for at gøre boksen højere */
     border-radius: 10px; /* Afrundede hjørner */
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Let skygge */
+}
+
+/* Navbar-boksen i Light Mode */
+body.light-mode .navbar-content {
+    background-color: #f9f9f9; /* Lys baggrund */
+    color: #333333; /* Mørk tekstfarve */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Let skygge */
+    border-radius: 10px; /* Afrundede hjørner */
+}
+
+body.light-mode .navbar-content a {
+    color: #333333; /* Mørk tekstfarve til links */
+}
+
+body.light-mode .navbar-content a:hover {
+    color: #1d8738; /* Grøn hover-effekt */
 }
 
 .navbar .logo {
@@ -80,6 +111,13 @@ body.light-mode {
     font-weight: 600; /* Gør titlen fed */
 }
 
+/* Sektionstitel i Light Mode */
+body.light-mode .section-title {
+    background: linear-gradient(90deg, #1d8738, #f2d472); /* Grøn til guld gradient */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
 /* Typewriter Effekt */
 .typewriter {
     text-align: center; /* Sørger for, at teksten altid er centreret */
@@ -93,6 +131,12 @@ body.light-mode {
     display: block; /* Sørger for, at elementet fylder hele linjen */
     width: fit-content; /* Tilpasser bredden til indholdet */
     animation: blink 0.5s step-end infinite; /* Kun blinkende cursor */
+}
+
+/* Typewriter i Light Mode */
+body.light-mode .typewriter {
+    color: #333333; /* Mørk tekstfarve */
+    border-right: 2px solid #1d8738; /* Grøn cursor */
 }
 
 /* Fjern typing-animation */
@@ -217,6 +261,21 @@ body.light-mode {
     gap: 0.5rem; /* Reducerer mellemrum mellem elementerne */
 }
 
+/* Bokse i Light Mode */
+body.light-mode .announcement-box {
+    background-color: #ffffff; /* Hvid baggrund */
+    color: #333333; /* Mørk tekstfarve */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Let skygge */
+}
+
+body.light-mode .announcement-title {
+    color: #1d8738; /* Grøn titel */
+}
+
+body.light-mode .announcement-text {
+    color: #555555; /* Mørk grå tekst */
+}
+
 /* Hover-effekt for boksene */
 .announcement-box:hover {
     transform: scale(1.05); /* Gør boksen lidt større */
@@ -271,4 +330,14 @@ body.light-mode {
 .announcement-button:hover {
     transform: translateY(-3px); /* Løfter knappen lidt op */
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Let skygge */
+}
+
+/* Knapper i Light Mode */
+body.light-mode .announcement-button {
+    background: linear-gradient(90deg, #1d8738, #f2d472); /* Grøn til guld gradient */
+    color: white; /* Hvid tekst */
+}
+
+body.light-mode .announcement-button:hover {
+    background: linear-gradient(90deg, #145a26, #d4b057); /* Mørkere grøn til guld ved hover */
 }
