@@ -1,11 +1,11 @@
 // Select the toggle icon
 const toggleIcon = document.querySelector('.toggle-icon');
 
-// Add event listener for toggling light/dark mode
-toggleIcon.addEventListener('click', () => {
-    document.body.classList.toggle('dark-mode');
-    document.body.classList.toggle('light-mode');
-});
+// // Add event listener for toggling light/dark mode
+// toggleIcon.addEventListener('click', () => {
+//     document.body.classList.toggle('dark-mode');
+//     document.body.classList.toggle('light-mode');
+// });
 
 // Typewriter Effekt
 const typewriterElement = document.querySelector('.typewriter');
@@ -32,3 +32,22 @@ function typeWriter() {
 }
 
 typeWriter();
+
+function toggleMenu() {
+    const mobileMenu = document.querySelector('.mobile-menu');
+    mobileMenu.classList.toggle('active');
+}
+
+function toggleDarkMode() {
+    const body = document.body;
+    body.classList.toggle('light-mode');
+    body.classList.toggle('dark-mode');
+
+    // Skift emoji afhængigt af tilstanden
+    const toggleIcon = document.querySelector('.toggle-icon');
+    if (body.classList.contains('light-mode')) {
+        toggleIcon.textContent = '🌙'; // Måne-ikon for dark mode
+    } else {
+        toggleIcon.textContent = '💡'; // Pære-ikon for light mode
+    }
+}
