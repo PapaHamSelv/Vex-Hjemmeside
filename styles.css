@@ -1,4 +1,8 @@
 /* General Reset */
+* {
+    font-family: 'Poppins', Arial, sans-serif; /* Anvender Poppins-skrifttypen */
+}
+
 body {
     margin: 0;
     font-family: 'Poppins', Arial, sans-serif;
@@ -8,26 +12,109 @@ body {
 
 /* Dark Mode (default) */
 body.dark-mode {
-    background-color: #1A1A1A; /* Mørkeblå/grå nuance */
-    color: #e4e4e4;
+    background-color: #1A1A1A; /* Mørk baggrund */
+    color: #e4e4e4; /* Lys tekst */
 }
 
 /* Light Mode */
 body.light-mode {
     background-color: #f9f9f9; /* Lys baggrund */
-    color: #333333; /* Mørk tekstfarve */
+    color: #333333; /* Mørk tekst */
 }
 
-/* Navbar Styling med gradient */
+/* Navbar Styling */
 .navbar {
     display: flex;
-    justify-content: space-between; /* Sørger for, at logo og links er på hver sin side */
+    justify-content: space-between;
     align-items: center;
-    padding: 0.3rem 1.5rem; /* Mindre padding for en mere kompakt navbar */
+    padding: 0.5rem 1rem;
     background-color: #2C2C2C;
     color: white;
-    height: 50px; /* Reduceret højde */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Let skygge */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+/* Desktop Menu */
+.desktop-menu {
+    display: flex;
+    gap: 1rem;
+}
+
+.desktop-menu a {
+    text-decoration: none;
+    color: white;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+}
+
+.desktop-menu a:hover {
+    color: #f2d472;
+}
+
+/* Mobile Menu */
+.mobile-menu {
+    display: none; /* Skjules som standard */
+    flex-direction: column;
+    gap: 0.5rem;
+    background-color: #2C2C2C;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    padding: 1rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 10;
+}
+
+.mobile-menu a {
+    text-decoration: none;
+    color: white;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+}
+
+.mobile-menu a:hover {
+    color: #f2d472;
+}
+
+/* Toggle Icon */
+.toggle-icon {
+    display: none; /* Skjules som standard */
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+/* Responsiv styling */
+@media (max-width: 768px) {
+    .desktop-menu {
+        display: none; /* Skjul desktop-menu på små skærme */
+    }
+
+    .toggle-icon {
+        display: block; /* Vis toggle-ikonet på små skærme */
+    }
+
+    .mobile-menu {
+        display: none; /* Skjules som standard */
+    }
+
+    .mobile-menu.active {
+        display: flex; /* Vis menuen, når den er aktiv */
+    }
+
+    .announcement-container {
+        flex-direction: column; /* Stabler boksene lodret */
+        align-items: center; /* Centrerer boksene */
+    }
+
+    .announcement-box {
+        width: 90%; /* Gør boksene bredere på små skærme */
+        margin: 1rem 0; /* Tilføjer mellemrum mellem boksene */
+    }
+
+    .mobile-menu {
+        width: 100%; /* Sørger for, at menuen fylder hele bredden */
+    }
 }
 
 /* Navbar i Light Mode */
@@ -241,9 +328,36 @@ body.light-mode .typewriter {
     margin-left: 91rem; /* Flytter boksen mere til venstre */
 }
 
-/* Justering af knappen i boks 3 */
-.announcement-container .box-3 .announcement-button {
-    /* Denne regel er ikke længere nødvendig, da knappen er fjernet */
+/* Ny anmeldelsesboks */
+.announcement-container .box-4 {
+    background-color: #2C2C2C; /* Mørk grå baggrund */
+    color: white;
+    padding: 1.5rem;
+    border-radius: 10px; /* Afrundede hjørner */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Let skygge */
+    width: 350px; /* Fast bredde */
+    height: 590px; /* Dynamisk højde baseret på indhold */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 1rem; /* Mellemrum mellem anmeldelsesboksene */
+    margin-top: -670px; /* Juster afstand fra boks 4 */
+    margin-left: 65.2rem; /* Juster placering */
+}
+
+/* Justering af knappen */
+.announcement-button {
+    display: inline-block;
+    margin-top: auto; /* Sørger for, at knappen placeres i bunden */
+    padding: 0.5rem 1rem;
+    background: linear-gradient(90deg, #f2d472, #1d8738); /* Gradient baggrund */
+    color: white;
+    text-decoration: none;
+    border-radius: 5px; /* Afrundede hjørner */
+    font-size: 0.9rem;
+    font-weight: bold;
+    text-align: center;
+    transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 /* Announcement Box */
@@ -340,4 +454,126 @@ body.light-mode .announcement-button {
 
 body.light-mode .announcement-button:hover {
     background: linear-gradient(90deg, #145a26, #d4b057); /* Mørkere grøn til guld ved hover */
+}
+
+/* Team Container */
+.team-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* To kolonner */
+    gap: 1rem; /* Mellemrum mellem boksene */
+    margin: 2rem auto;
+    max-width: 1200px;
+    padding: 0 1rem;
+    font-family: 'Poppins', Arial, sans-serif; /* Anvender Poppins-skrifttypen */
+}
+
+/* Team Box med gradient streg */
+.team-box {
+    display: flex;
+    align-items: flex-start; /* Justerer indholdet til toppen */
+    background-color: #2C2C2C; /* Mørk grå baggrund */
+    color: white;
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    gap: 1rem; /* Mellemrum mellem billede og tekst */
+    min-height: 200px; /* Ens højde for alle bokse */
+    position: relative; /* Gør det muligt at placere pseudo-elementet */
+}
+
+/* Gradient streg i venstre side */
+.team-box::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 5px; /* Bredden af stregen */
+    height: 100%; /* Strækker sig over hele boksens højde */
+    background-color: #1d8738; /* Grøn til gul gradient */
+    border-radius: 10px 0 0 10px; /* Afrundede hjørner på venstre side */
+}
+
+/* Hover-effekt for Team Box */
+.team-box:hover {
+    transform: scale(1.05); /* Gør boksen lidt større */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3); /* Tilføjer en subtil skygge */
+    transition: 0.7s ease; /* Glidende overgang */
+}
+
+.team-box:hover::before {
+    background-color: #d4b057;
+}
+
+/* Profilbillede */
+.team-image {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%; /* Gør billedet rundt */
+    object-fit: cover; /* Sørger for, at billedet passer inden for rammen */
+    flex-shrink: 0; /* Forhindrer billedet i at ændre størrelse */
+}
+
+/* Team Info */
+.team-info {
+    display: flex;
+    flex-direction: column; /* Sørger for, at teksten stables lodret */
+    justify-content: flex-start; /* Justerer teksten til toppen */
+    flex: 1; /* Sørger for, at teksten fylder resten af boksen */
+}
+
+/* Team Name */
+.team-name {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: #f2d472;
+}
+
+/* Team Role */
+.team-role {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    color: #1d8738;
+}
+
+/* Team Description */
+.team-description {
+    font-size: 0.9rem;
+    color: #e4e4e4;
+    line-height: 1.5; /* Forbedrer læsbarheden */
+}
+
+/* Light Mode Styling */
+body.light-mode .team-box {
+    background-color: #ffffff;
+    color: #333333;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+body.light-mode .team-name {
+    color: #1d8738;
+}
+
+body.light-mode .team-role {
+    color: #f2d472;
+}
+
+body.light-mode .team-description {
+    color: #555555;
+}
+
+/* Indlejret anmeldelsesboks */
+.review-box {
+    background-color: #2C2C2C; /* Mørk grå baggrund */
+    padding: 1rem;
+    border-radius: 5px; /* Afrundede hjørner */
+    border-left: 5px solid #f2d472; /* Gul embed-streg */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Let skygge */
+}
+
+/* Tekst i anmeldelsesboksen */
+.review-text {
+    font-size: 0.9rem;
+    color: #e4e4e4; /* Lys grå tekst */
+    line-height: 1.5; /* Forbedrer læsbarheden */
 }
