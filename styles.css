@@ -60,7 +60,7 @@ body.light-mode {
     position: absolute;
     top: 100%;
     left: 0;
-    width: 100%;
+    width: 100%; /* Sørger for, at menuen fylder hele bredden */
     padding: 1rem;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     z-index: 10;
@@ -79,9 +79,17 @@ body.light-mode {
 
 /* Toggle Icon */
 .toggle-icon {
-    display: none; /* Skjules som standard */
-    font-size: 1.5rem;
     cursor: pointer;
+    font-size: 1.5rem; /* Størrelse på emojien */
+    color: white; /* Farve i dark mode */
+    margin-left: 1rem; /* Afstand fra links */
+    transition: color 0.3s ease; /* Glidende overgang for farve */
+    display: inline-block; /* Sørger for, at den opfører sig som en knap */
+}
+
+/* Light Mode Styling */
+body.light-mode .toggle-icon {
+    color: #333333; /* Farve i light mode */
 }
 
 /* Responsiv styling */
@@ -565,15 +573,29 @@ body.light-mode .team-description {
 /* Indlejret anmeldelsesboks */
 .review-box {
     background-color: #2C2C2C; /* Mørk grå baggrund */
+    color: white; /* Lys tekst */
     padding: 1rem;
     border-radius: 5px; /* Afrundede hjørner */
-    border-left: 5px solid #f2d472; /* Gul embed-streg */
+    margin-bottom: 1rem; /* Afstand mellem bokse */
+    border-left: 5px solid #f2d472; /* Gul streg i venstre side */
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Let skygge */
 }
 
-/* Tekst i anmeldelsesboksen */
+/* Light mode styling for review-box */
+body.light-mode .review-box {
+    background-color: #ffffff; /* Hvid baggrund */
+    color: #333333; /* Mørk tekst */
+    border-left: 5px solid #1d8738; /* Grøn streg i venstre side */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Let skygge */
+}
+
+/* Tekst i review-box */
 .review-text {
     font-size: 0.9rem;
-    color: #e4e4e4; /* Lys grå tekst */
     line-height: 1.5; /* Forbedrer læsbarheden */
+}
+
+/* Light mode styling for tekst */
+body.light-mode .review-text {
+    color: #555555; /* Mørkere tekstfarve i light mode */
 }
