@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vex Store | Kontakt os</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./styling/styles.css">
+    <link rel="icon" href="./assets/vex-logo.png" type="image/x-icon">
+</head>
+<body class="dark-mode">
+    <nav class="navbar">
+        <div class="logo-box">
+            <div class="logo">
+                <img src="./assets/vex-logo.png" alt="Vex Store Logo" style="height: 40px;">
+            </div>
+        </div>
+        <div class="navbar-content">
+            <div>
+                <a href="index.html">Hjem</a>
+                <a href="ourteam.html">Vores team</a>
+                <a href="portofolie.html">Portofolie</a>
+                <a href="contractus.html">Kontakt os</a>
+            </div>
+            <div class="toggle-icon" onclick="toggleDarkMode()">💡</div>
+        </div>
+    </nav>
+
+    <section class="content">
+        <h1 class="section-title">Kontakt os</h1>
+
+        <div class="contact-container">
+            <!-- Discord-sektion -->
+            <div class="contact-box">
+                <h2 class="announcement-title">Kontakt os via Discord</h2>
+                <p class="announcement-text">Den hurtigste måde at få fat i os er via vores Discord-server. Klik på knappen nedenfor for at komme i kontakt med os!</p>
+                <a href="https://discord.gg/jQ8ZDQdPZC" target="_blank" class="contact-button">Gå til Discord</a>
+            </div>
+
+            <!-- SoMe-sektion -->
+            <div class="contact-box">
+                <h2 class="announcement-title">Følg os på sociale medier</h2>
+                <div class="social-icons">
+                    <a href="https://discord.gg/jQ8ZDQdPZC" target="_blank"><img src="./assets/discord-icon.png" alt="Discord"></a>
+                    <a href="#" target="_blank"><img src="./assets/instagram-icon.png" alt="Instagram"></a>
+                    <a href="#" target="_blank"><img src="./assets/tiktok-icon.png" alt="Tiktok"></a>
+                </div>
+            </div>
+
+            <!-- FAQ-sektion -->
+            <div class="contact-box">
+                <h2 class="announcement-title">Ofte stillede spørgsmål</h2>
+                <div class="faq-item">
+                    <h3 class="faq-question" onclick="toggleFAQ(this)">Hvordan køber man vores produkter?</h3>
+                    <p class="faq-answer">Alle vores produkter sælges over Discord og udleveres på Keymaster.</p>
+                </div>
+                <div class="faq-item">
+                    <h3 class="faq-question" onclick="toggleFAQ(this)">Hvad er jeres svartider?</h3>
+                    <p class="faq-answer">Vi er allesammen kun mennesker, så selvfølgelig kan vi ikke være der altid - men forvent svar indenfor 24 timer.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="./script/script.js"></script>
+</body>
+</html>
